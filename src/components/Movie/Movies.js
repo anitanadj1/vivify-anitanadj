@@ -23,12 +23,21 @@ const Movies = () => {
     setMovies(filteredMovies);
   }
 
+  const changeRating = (value, index) => {
+    let selectedMovie = movies[index];
+    const currentRatings = selectedMovie.ratings ? selectedMovie.ratings : []
+    selectedMovie.ratings = [...currentRatings, value];
+    const movieRating = selectedMovie.ratings.reduce((prevValue, rating) => prevValue + rating, 0);
+    selectedMovie.rating = Number(((movieRating + value) /  (selectedMovie.ratings.length+1)).toFixed(1));
+    setMovies([...movies]);
+  }
+
   return (
     <div className="container-fluid" style={{ marginLeft: '-15px' }}>
       <button onClick={() => setIsFormDisplayed(true)}>Add new movie</button>
       <div className="d-flex flex-row">
         <div className="col-sm-12">
-          <MovieList movies={movies} deleteMovie={deleteMovie} />
+          <MovieList movies={movies} deleteMovie={deleteMovie} changeRating={changeRating} />
         </div>
       </div>
       {isFormDisplayed &&

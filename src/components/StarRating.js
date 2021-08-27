@@ -23,26 +23,26 @@ const cropWidth = rating => {
   return Math.floor((rating * width) / 5);
 };
 
-const StarRating = ({ rating }) => {
+const StarRating = ({ rating, changeRating }) => {
   const containerStyle = { width: `${cropWidth(rating)}px` };
 
   return (
     <div>
       <div style={styles.starsOuter}>
         <div style={containerStyle}>
-          <div style={styles.starsEmptyInner}>
-            <i className="fa fa-star-o fa-lg" style={styles.star}></i>
-            <i className="fa fa-star-o fa-lg" style={styles.star}></i>
-            <i className="fa fa-star-o fa-lg" style={styles.star}></i>
-            <i className="fa fa-star-o fa-lg" style={styles.star}></i>
-            <i className="fa fa-star-o fa-lg" style={styles.star}></i>
+          <div style={styles.starsEmptyInner} className="stars-wrapper">
+            <i className="fa fa-star-o fa-lg" style={styles.star} onClick={() => changeRating(1)}></i>
+            <i className="fa fa-star-o fa-lg" style={styles.star} onClick={() => changeRating(2)}></i>
+            <i className="fa fa-star-o fa-lg" style={styles.star} onClick={() => changeRating(3)}></i>
+            <i className="fa fa-star-o fa-lg" style={styles.star} onClick={() => changeRating(4)}></i>
+            <i className="fa fa-star-o fa-lg" style={styles.star} onClick={() => changeRating(5)}></i>
           </div>
-          <div style={styles.starsInner}>
-            <i className="fa fa-star fa-lg" style={styles.star}></i>
-            <i className="fa fa-star fa-lg" style={styles.star}></i>
-            <i className="fa fa-star fa-lg" style={styles.star}></i>
-            <i className="fa fa-star fa-lg" style={styles.star}></i>
-            <i className="fa fa-star fa-lg" style={styles.star}></i>
+          <div style={styles.starsInner} className="stars-wrapper">
+            <i className="fa fa-star fa-lg" style={styles.star} onClick={() => changeRating(1)}></i>
+            <i className="fa fa-star fa-lg" style={styles.star} onClick={() => changeRating(2)}></i>
+            <i className="fa fa-star fa-lg" style={styles.star} onClick={() => changeRating(3)}></i>
+            <i className="fa fa-star fa-lg" style={styles.star} onClick={() => changeRating(4)}></i>
+            <i className="fa fa-star fa-lg" style={styles.star} onClick={() => changeRating(5)}></i>
           </div>
         </div>
       </div>

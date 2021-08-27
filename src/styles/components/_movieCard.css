@@ -12,3 +12,7 @@
 .card-footer-badge {
     font-size: 1rem;
 }
+
+.stars-wrapper i {
+    cursor: pointer;
+}
