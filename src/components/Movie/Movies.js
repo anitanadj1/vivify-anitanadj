@@ -18,12 +18,17 @@ const Movies = () => {
     setIsFormDisplayed(false);
   }
 
+  const deleteMovie = (index) => {
+    const filteredMovies = [...movies.splice(0, index), ...movies.splice(index+1)];
+    setMovies(filteredMovies);
+  }
+
   return (
     <div className="container-fluid" style={{ marginLeft: '-15px' }}>
       <button onClick={() => setIsFormDisplayed(true)}>Add new movie</button>
       <div className="d-flex flex-row">
         <div className="col-sm-12">
-          <MovieList movies={movies} />
+          <MovieList movies={movies} deleteMovie={deleteMovie} />
         </div>
       </div>
       {isFormDisplayed &&

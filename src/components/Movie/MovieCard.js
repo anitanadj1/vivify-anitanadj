@@ -13,6 +13,7 @@ const MovieCard = ({ movie, deleteMovie }) => (
         <p className="text-justify" style={{ fontSize: '14px' }}>
           {movie.description}
         </p>
+        <button onClick={deleteMovie}>Delete movie</button>
       </div>
       <div className="card-footer">
         <div className="clearfix">
