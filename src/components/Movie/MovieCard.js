@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import StarRating from '../StarRating';
 
-const MovieCard = ({ movie }) => (
+const MovieCard = ({ movie, deleteMovie }) => (
   <div className="movie-card">
     <div className="movie-card card">
       <img className="card-img-top" src={movie.imageUrl} alt="" />
